@@ -1,0 +1,82 @@
+<div id="app">
+  <h1>How Can You Add CSS Colors Together?</h1>
+	<h2>Primary Colors (Max Intensity)</h2>
+	<div class="container">
+    <div class="card">
+  		<div id="rgb_red" class="swatch"><span class="label">red<span></div>
+      <span id="rgb_red_csscolor" class="description"></span>
+    </div>
+    <div class="card">
+  		<div id="rgb_green" class="swatch"><span class="label">green<span></div>
+      <span id="rgb_green_csscolor" class="description"></span>
+    </div>
+    <div class="card">
+  		<div id="rgb_blue" class="swatch"><span class="label">blue<span></div>
+      <span id="rgb_blue_csscolor" class="description"></span>
+    </div>
+	</div>
+  <hr />
+	<h2>Adding Primary Colors (Max Intensity)</h2>
+	<div class="container">
+    <div class="card">
+  		<div id="rgb_green+red" class="swatch"><span class="label">yellow<span></div>
+      <span id="rgb_green+red_csscolor" class="description"></span>
+    </div>
+    <div class="card">
+      <div id="rgb_red+blue" class="swatch"><span class="label">magenta<span></div>
+      <span id="rgb_red+blue_csscolor" class="description"></span>
+    </div>
+    <div class="card">
+  		<div id="rgb_blue+green" class="swatch"><span class="label">cyan<span></div>
+      <span id="rgb_blue+green_csscolor" class="description"></span>
+    </div>
+    <div class="card">
+  		<div id="rgb_red+green+blue" class="swatch"><span class="label">white<span></div>
+      <span id="rgb_red+green+blue_csscolor" class="description"></span>
+    </div>
+  </div>
+  <hr />
+	<h2>Adding Any Colors (Variable Intensity)</h2>
+	<div class="container">
+      <div class="control control-balance">
+        <input id="balance" type="range" min="0" max="1" step=".01" value=".5">
+        <label id="balance-label" for="balance" class="label label__range">balance</label>
+      </div>
+    <div class="card">
+      <div id="first" class="swatch"><span class="label">first<span></div>
+      <span id="first_csscolor" class="description"></span>
+      <div class="control">
+        <input id="red-one" type="range" min="0" max="1" step=".0025" value="0">
+        <label for="red-one" class="label label__range">R</label>    
+      </div>
+      <div class="control">
+        <input id="green-one" type="range" min="0" max="1" step=".0025" value="0">
+        <label for="green-one" class="label label__range">G</label>
+      </div>
+    </div>
+    <div class="operator">+</div>
+    <div class="card">
+      <div id="second" class="swatch"><span class="label">second<span></div>
+      <span id="second_csscolor" class="description"></span>
+      <div class="control">
+        <input id="red-two" type="range" min="0" max="1" step=".0025" value="0">
+        <label for="red-two" class="label label__range">R</label>    
+      </div>
+      <div class="control">
+        <input id="green-two" type="range" min="0" max="1" step=".0025" value="0">
+        <label for="green-two" class="label label__range">G</label>
+      </div>
+    </div>
+    <div class="operator">=</div>
+    <div class="card">
+      <div id="composite" class="swatch"><span class="label">result<span></div>
+      <span id="composite_csscolor" class="description"></span>
+      <div class="control"></div>
+      <div class="control"></div>
+    </div>
+    <div class="control--vertical">
+      <input id="intensity" type="range" min="0" max="100" step="1" value="50">
+      <label id="intensity-label" for="intensity" class="label label__range">intensity</label>
+    </div>
+  </div>
+</div>

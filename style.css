@@ -1,0 +1,174 @@
+:root {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: white;
+  background-color: rgb(248, 248, 248);
+  margin: 10px;
+}
+
+h1, h2 {
+  color: black;
+  text-transform: capitalize;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  background: transparent;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track
+{
+  background: rgb(82, 82, 82);
+  border-radius: 4px;
+  height: 8px;
+  cursor: pointer;
+}
+
+input[type=range]::-moz-range-track {
+  background: rgb(82, 82, 82);
+  border-radius: 4px;
+  height: 8px;
+  cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  border: 2px solid #000000;
+  height: 24px;
+  width: 32px;
+  border-radius: 8px;
+  background: rgb(255, 255, 255);
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -8px;
+}
+
+input[type=range]::-moz-range-thumb {
+  border: 2px solid #000000;
+  height: 24px;
+  width: 32px;
+  border-radius: 8px;
+  background: rgb(255, 255, 255);
+  cursor: pointer;
+  margin-top: -8px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(6, min-content);
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.description {
+  color: black;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.label {
+  text-shadow:
+    -1px -1px 0 black,
+     0   -1px 0 black,
+     1px -1px 0 black,
+     1px  0   0 black,
+     1px  1px 0 black,
+     0    1px 0 black,
+    -1px  1px 0 black,
+    -1px  0   0 black;
+  margin: auto;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.label__range {
+  text-shadow: none;
+  color: black;
+  text-align: left;
+  user-select: none;
+}
+
+.operator {
+  font-weight: bold;
+  font-size: 24px;
+  color: black;
+  margin-left: 8px;
+  margin-right: 8px;
+  grid-row: 3;
+}
+
+.card {
+  display: grid;
+  justify-items: center;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 8px;
+  margin: 8px;
+  width: 180px;
+  grid-row: 3;
+}
+
+.swatch {
+  display: grid;
+  margin: 10px;
+  width: 90px;
+  height: 90px;
+  border: 1px solid black;
+  border-radius: 45px
+}
+
+.control {
+  display: grid;
+  grid-template-rows: 36px;
+}
+
+.control input {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.control label {
+  grid-column: 1;
+  grid-row: 1;
+  padding-right: 8px;
+}
+
+.control--vertical {
+  display: grid;
+  grid-auto-rows: min-content;
+  grid-row: 3;
+}
+
+.control--vertical input {
+  height: 220px;
+  width: 200px;
+  grid-column: 1;
+  grid-row: 2;
+  transform: rotate(-90deg);
+}
+
+.control--vertical label {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.control-balance {
+  grid-column: 1 / 4;
+  grid-row: 1;
+}
+
+.control-balance input {
+  grid-column: 1 / 4;
+  grid-row: 2;
+  padding-bottom: 16px;
+}
+
+.control-balance label {
+  grid-column: 1 / 4;
+  grid-row: 1;
+  padding-bottom: 8px;
+}

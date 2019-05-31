@@ -55,6 +55,25 @@ input[type=range]::-moz-range-thumb {
   margin-top: -8px;
 }
 
+input[type=number] {
+  -webkit-appearance: none;
+  -moz-appearance:textfield;
+  background: transparent;
+  border-radius: 12px;
+  border: 1px solid rgb(0, 0, 0);
+  text-align: center;
+  font-size: 14px;
+}
+
+input[type=number]:focus {
+  outline: none;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
 .container {
   display: grid;
   grid-template-columns: repeat(6, min-content);
@@ -108,8 +127,9 @@ input[type=range]::-moz-range-thumb {
   border-radius: 8px;
   padding: 8px;
   margin: 8px;
-  width: 180px;
+  width: 240px;
   grid-row: 3;
+  grid-gap: 8px;
 }
 
 .swatch {
@@ -123,18 +143,25 @@ input[type=range]::-moz-range-thumb {
 
 .control {
   display: grid;
+  grid-template-columns: 20px 1fr 50px;
   grid-template-rows: 36px;
+  grid-gap: 8px;
 }
 
-.control input {
+.control input[type=range] {
   grid-column: 2;
   grid-row: 1;
+}
+
+.control input[type=number] {
+  grid-column: 3;
+  grid-row: 1;
+  width: 100%;
 }
 
 .control label {
   grid-column: 1;
   grid-row: 1;
-  padding-right: 8px;
 }
 
 .control--vertical {
@@ -159,16 +186,16 @@ input[type=range]::-moz-range-thumb {
 .control-balance {
   grid-column: 1 / 4;
   grid-row: 1;
+  grid-gap: 0;
 }
 
 .control-balance input {
   grid-column: 1 / 4;
   grid-row: 2;
-  padding-bottom: 16px;
 }
 
 .control-balance label {
-  grid-column: 1 / 4;
+  grid-column: 3;
   grid-row: 1;
-  padding-bottom: 8px;
+  padding-left: 16px;
 }

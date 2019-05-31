@@ -1,6 +1,6 @@
 <div id="app">
-  <h1>How Can You Add CSS Colors Together?</h1>
-  <img src="https://raw.githubusercontent.com/brenderi/typescript-training-playground/master/color_triangle.png" style="width: 340px;" />	<h2>Primary Colors (Max Intensity)</h2>
+	<h1>How Can You Add CSS Colors Together?</h1>
+	<img src="https://raw.githubusercontent.com/brenderi/typescript-training-playground/master/color_triangle.png" style="width: 340px;" />	<h2>Primary Colors (Max Intensity)</h2>
 	<div class="container">
     <div class="card">
   		<div id="rgb_red" class="swatch"><span class="label">red<span></div>
@@ -46,12 +46,14 @@
       <div id="first" class="swatch"><span class="label">first<span></div>
       <span id="first_csscolor" class="description"></span>
       <div class="control">
-        <input id="red-one" type="range" min="0" max="1" step=".0025" value="0">
-        <label for="red-one" class="label label__range">R</label>    
+        <input id="red-one-range" type="range" min="0" max="1" step=".001" value="0">
+        <label for="red-one-range" class="label label__range">R</label>
+				<input id="red-one-number" type="number" min="0" max="1" step=".001" value="0">
       </div>
       <div class="control">
-        <input id="green-one" type="range" min="0" max="1" step=".0025" value="0">
-        <label for="green-one" class="label label__range">G</label>
+        <input id="green-one-range" type="range" min="0" max="1" step=".001" value="0">
+        <label for="green-one-range" class="label label__range">G</label>
+				<input id="green-one-number" type="number" min="0" max="1" step=".001" value="0">
       </div>
     </div>
     <div class="operator">+</div>
@@ -59,12 +61,14 @@
       <div id="second" class="swatch"><span class="label">second<span></div>
       <span id="second_csscolor" class="description"></span>
       <div class="control">
-        <input id="red-two" type="range" min="0" max="1" step=".0025" value="0">
-        <label for="red-two" class="label label__range">R</label>    
+        <input id="red-two-range" type="range" min="0" max="1" step=".001" value="0">
+        <label for="red-two-range" class="label label__range">R</label>    
+				<input id="red-two-number" type="number" min="0" max="1" step=".001" value="0">
       </div>
       <div class="control">
-        <input id="green-two" type="range" min="0" max="1" step=".0025" value="0">
-        <label for="green-two" class="label label__range">G</label>
+        <input id="green-two-range" type="range" min="0" max="1" step=".001" value="0">
+        <label for="green-two-range" class="label label__range">G</label>
+				<input id="green-two-number" type="number" min="0" max="1" step=".001" value="0">
       </div>
     </div>
     <div class="operator">=</div>

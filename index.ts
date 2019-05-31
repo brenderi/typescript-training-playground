@@ -79,16 +79,20 @@ updateElementBackground(bluePlusGreenSwatch, bluePlusGreenRGBColor);
 updateElementBackground(redPlusGreenPlusBlueSwatch, redPlusGreenPlusBlueRGBColor);
 
 //
-// Get range input controls
+// Get input controls
 //
-const intensityControl = document.getElementById('intensity') as HTMLInputElement;
-const intensityLabel = document.getElementById('intensity-label') as HTMLInputElement;
-const balanceControl = document.getElementById('balance') as HTMLInputElement;
-const balanceLabel = document.getElementById('balance-label') as HTMLInputElement;
-const redOneControl = document.getElementById('red-one') as HTMLInputElement;
-const greenOneControl = document.getElementById('green-one') as HTMLInputElement;
-const redTwoControl = document.getElementById('red-two') as HTMLInputElement;
-const greenTwoControl = document.getElementById('green-two') as HTMLInputElement;
+const intensityRangeControl = document.getElementById('intensity') as HTMLInputElement;
+const intensityRangeLabel = document.getElementById('intensity-label') as HTMLInputElement;
+const balanceRangeControl = document.getElementById('balance') as HTMLInputElement;
+const balanceRangeLabel = document.getElementById('balance-label') as HTMLInputElement;
+const redOneRangeControl = document.getElementById('red-one-range') as HTMLInputElement;
+const greenOneRangeControl = document.getElementById('green-one-range') as HTMLInputElement;
+const redTwoRangeControl = document.getElementById('red-two-range') as HTMLInputElement;
+const greenTwoRangeControl = document.getElementById('green-two-range') as HTMLInputElement;
+const redOneNumberControl = document.getElementById('red-one-number') as HTMLInputElement;
+const greenOneNumberControl = document.getElementById('green-one-number') as HTMLInputElement;
+const redTwoNumberControl = document.getElementById('red-two-number') as HTMLInputElement;
+const greenTwoNumberControl = document.getElementById('green-two-number') as HTMLInputElement;
 
 //
 // Create color objects to add together
@@ -99,40 +103,44 @@ const second = new FractionalRGBColor(1, 0);
 //
 // Initialize controls and color in the swatches
 //
-redOneControl.value = first.red.toString();
-greenOneControl.value = first.green.toString();
-redTwoControl.value = second.red.toString();
-greenTwoControl.value = second.green.toString();
+redOneRangeControl.value = first.red.toString();
+greenOneRangeControl.value = first.green.toString();
+redTwoRangeControl.value = second.red.toString();
+greenTwoRangeControl.value = second.green.toString();
+redOneNumberControl.value = first.red.toString();
+greenOneNumberControl.value = first.green.toString();
+redTwoNumberControl.value = second.red.toString();
+greenTwoNumberControl.value = second.green.toString();
 refreshColorSwatches();
 
 //
 // Create and subscribe to Observables for range input control events
 //
-createRangeObservable(redOneControl).subscribe((event: Event) => {
+createRangeObservable(redOneRangeControl).subscribe((event: Event) => {
   first.red = parseFloat((event.target as HTMLInputElement).value);
   refreshColorSwatches();
 });
 
-createRangeObservable(greenOneControl).subscribe((event: Event) => {
+createRangeObservable(greenOneRangeControl).subscribe((event: Event) => {
   first.green = parseFloat((event.target as HTMLInputElement).value);
   refreshColorSwatches();
 });
 
-createRangeObservable(redTwoControl).subscribe((event: Event)  => {
+createRangeObservable(redTwoRangeControl).subscribe((event: Event)  => {
   second.red = parseFloat((event.target as HTMLInputElement).value);
   refreshColorSwatches();
 });
 
-createRangeObservable(greenTwoControl).subscribe((event: Event)  => {
+createRangeObservable(greenTwoRangeControl).subscribe((event: Event)  => {
   second.green = parseFloat((event.target as HTMLInputElement).value);
   refreshColorSwatches();
 });
 
-createRangeObservable(intensityControl).subscribe((event: Event)  => {
+createRangeObservable(intensityRangeControl).subscribe((event: Event)  => {
   refreshColorSwatches()
 });
 
-createRangeObservable(balanceControl).subscribe((event: Event)  => {
+createRangeObservable(balanceRangeControl).subscribe((event: Event)  => {
   refreshColorSwatches();
 });
 
@@ -140,13 +148,45 @@ createRangeObservable(balanceControl).subscribe((event: Event)  => {
 //
 // Reset balance and intensity range input controls
 //
-balanceLabel.addEventListener('click', () => {
-  balanceControl.value = '0.5';
+balanceRangeLabel.addEventListener('click', () => {
+  balanceRangeControl.value = '0.5';
   refreshColorSwatches();
 });
 
-intensityLabel.addEventListener('click', () => {
-  intensityControl.value = '50';
+intensityRangeLabel.addEventListener('click', () => {
+  intensityRangeControl.value = '50';
+  refreshColorSwatches();
+});
+
+//
+// Listen for changes to the number input for the red and green fractional color values
+//
+
+redOneNumberControl.addEventListener('blur', event => {
+  const newValue = (event.target as HTMLInputElement).value;
+  first.red = parseFloat(newValue);
+  redOneRangeControl.value = newValue;
+  refreshColorSwatches();
+});
+
+greenOneNumberControl.addEventListener('blur', event => {
+  const newValue = (event.target as HTMLInputElement).value;
+  first.green = parseFloat(newValue);
+  greenOneRangeControl.value = newValue;
+  refreshColorSwatches();
+});
+
+redTwoNumberControl.addEventListener('blur', event => {
+  const newValue = (event.target as HTMLInputElement).value;
+  second.red = parseFloat(newValue);
+  redTwoRangeControl.value = newValue;
+  refreshColorSwatches();
+});
+
+greenTwoNumberControl.addEventListener('blur', event => {
+  const newValue = (event.target as HTMLInputElement).value;
+  second.green = parseFloat(newValue);
+  greenTwoRangeControl.value = newValue;
   refreshColorSwatches();
 });
 
@@ -163,10 +203,10 @@ function createRangeObservable(control: HTMLInputElement) {
 // Colors in the swatches based on all of the current values of the colors being added, the color balance, and the intensity
 //
 function refreshColorSwatches() {
-  const fraction = parseFloat(balanceControl.value);
-  updateElementBackground(firstSwatch, first, intensityControl.value);
-  updateElementBackground(secondSwatch, second, intensityControl.value);
-  updateElementBackground(compositeSwatch, addFractionalRGBColors(first, second, fraction), intensityControl.value);
+  const fraction = parseFloat(balanceRangeControl.value);
+  updateElementBackground(firstSwatch, first, intensityRangeControl.value);
+  updateElementBackground(secondSwatch, second, intensityRangeControl.value);
+  updateElementBackground(compositeSwatch, addFractionalRGBColors(first, second, fraction), intensityRangeControl.value);
 }
 
 //

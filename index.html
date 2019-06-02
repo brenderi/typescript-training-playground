@@ -1,6 +1,6 @@
 <div id="app">
 	<h1>How Can You Add CSS Colors Together?</h1>
-	<img src="https://raw.githubusercontent.com/brenderi/typescript-training-playground/master/color_triangle.png" style="width: 340px;" />	<h2>Primary Colors (Max Intensity)</h2>
+	<h2>Primary Colors (Max Intensity)</h2>
 	<div class="container">
     <div class="card">
   		<div id="rgb_red" class="swatch"><span class="label">red<span></div>
@@ -79,8 +79,9 @@
       <div class="control"></div>
     </div>
     <div class="control--vertical">
-      <input id="intensity" type="range" min="0" max="100" step="1" value="50">
+      <input id="intensity" type="range" min="0" max="100" step=".1" value="50">
       <label id="intensity-label" for="intensity" class="label label__range">intensity</label>
+			<input id="intensity-number" type="number" min="0" max="100" step=".1" value="50">
     </div>
   </div>
 </div>

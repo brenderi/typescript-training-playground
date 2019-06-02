@@ -83,6 +83,7 @@ updateElementBackground(redPlusGreenPlusBlueSwatch, redPlusGreenPlusBlueRGBColor
 //
 const intensityRangeControl = document.getElementById('intensity') as HTMLInputElement;
 const intensityRangeLabel = document.getElementById('intensity-label') as HTMLInputElement;
+const intensityNumberControl = document.getElementById('intensity-number') as HTMLInputElement;
 const balanceRangeControl = document.getElementById('balance') as HTMLInputElement;
 const balanceRangeLabel = document.getElementById('balance-label') as HTMLInputElement;
 const redOneRangeControl = document.getElementById('red-one-range') as HTMLInputElement;
@@ -159,7 +160,7 @@ intensityRangeLabel.addEventListener('click', () => {
 });
 
 //
-// Listen for changes to the number input for the red and green fractional color values
+// Listen for changes to the number input controls
 //
 
 redOneNumberControl.addEventListener('blur', event => {
@@ -187,6 +188,12 @@ greenTwoNumberControl.addEventListener('blur', event => {
   const newValue = (event.target as HTMLInputElement).value;
   second.green = parseFloat(newValue);
   greenTwoRangeControl.value = newValue;
+  refreshColorSwatches();
+});
+
+intensityNumberControl.addEventListener('blur', event => {
+  const newValue = (event.target as HTMLInputElement).value;
+  intensityRangeControl.value = newValue;
   refreshColorSwatches();
 });
 

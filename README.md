@@ -30,11 +30,17 @@ The goal of this activity is to use classes, interfaces, and functions to create
 
 Now that we can represent colors in different ways, what does the algorithm look like to add two colors together? Let's start with the three colors that make up all of the Daktronics full-color displays: red, green, and blue.
 
-5. Using the class created as part of step (2), create full intensity RGB representations of these colors:
-   
-   - [ ] red
-   - [ ] green
-   - [ ] blue
+5. Using the class created as part of step (2), create full intensity RGB representations of each primary color. The classes should implement this interface:
+
+```ts
+interface IColor {
+  red: number;
+  green: number;
+  blue: number;
+  isValidColor(): boolean;
+  buildCSSColor(i?: string | number): string;
+}
+```
 
 6. Set the corresponding color swatches in the HTML view to the string produced by the function written in step (4).
 
@@ -80,7 +86,7 @@ The center of the triangle is located at (1/3, 1/3) where each color has an equa
 
 Any given point on the color triangle describes more than one color. The intensity can vary between 0 and 100% for each color point.
 
-8. Create a fractional RGB class:
+8. Create a fractional RGB class (implements the `IColor` interface described in (5):
    - [ ] Contains the fractional red, green, and blue values (between 0 and 1)
    - [ ] Has a function to determine if the color is valid
    - [ ] Has a function that takes in the intensity and return a valid CSS RGB color

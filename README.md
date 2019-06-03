@@ -22,7 +22,6 @@ The goal of this activity is to use classes, interfaces, and functions to create
 
    - [ ] HEX
    - [ ] RGB
-   - [ ] HSL
 
 3. Add a function to each class that validates whether the color is valid.
 

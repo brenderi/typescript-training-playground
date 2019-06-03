@@ -2,7 +2,7 @@
 
 [Edit on StackBlitz ⚡️](https://stackblitz.com/edit/typescript-training-playground)
 
-## Adding Colors
+## Activity: Combining Colors
 
 There are multiple ways to specify a color in CSS:
 
@@ -10,32 +10,38 @@ There are multiple ways to specify a color in CSS:
 - red, green, blue: `rgb(127, 127, 127)`
 - hue, saturation, lightness: `hsl(200, 80%, 92%)`
 
-(There is also alpha channel, but that will be ignored for this activity.)
+(There is also an alpha channel for colors, but that will be ignored in this activity.)
 
-1. Add a class to the color-models folder in separate TS files for each of the ways to represent a color:
+The goal of this activity is to use classes, interfaces, and functions to create objects that represent colors and describe how they combine.
 
-   - HEX
-   - RGB
-   - HSL
+1. A starter template for this activity is available on StackBlitz at <https://stackblitz.com/edit/typescript-training-playground-starter>. Fork this project using the button in the toolbar. This project contains all of the HTML and CSS required for the view and the code that wires up the range and number `<input>` controls.
 
-2. Add a method to each class that will output a CSS color. Consider using a string template.
+2. Add a class to the color-models folder in separate TS files for each of the ways to represent a color:
 
-3. Add a method to each class that validates whether the color is valid.
+   - [ ] HEX
+   - [ ] RGB
+   - [ ] HSL
+
+3. Add a function to each class that validates whether the color is valid.
+
+4. Add a function to each class that will output a CSS color. Consider using a template string.
 
 Now that we can represent colors in different ways, what does the algorithm look like to add two colors together? Let's start with the three colors that make up all of the Daktronics full-color displays: red, green, and blue.
 
-4. Create RGB representations of these color:
+5. Using the class created as part of step (2), create RGB representations of these colors:
    
-   - red
-   - green
-   - blue
+   - [ ] red
+   - [ ] green
+   - [ ] blue
 
-5. Write a function that computes the sum of those colors:
+6. Set the corresponding color swatches in the HTML view to the string produced by the function written in step (4).
 
-   - red and green
-   - green and blue
-   - blue and red
-   - red and green and blue
+7. Write a function that computes the various combinations of those colors:
+
+   - [ ] red and green
+   - [ ] green and blue
+   - [ ] blue and red
+   - [ ] red and green and blue
 
 The hex and rgb formats are explicit about the common components of CSS colors and visible light: red, green, and blue.
 A color can be represented as a combination: 

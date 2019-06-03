@@ -128,26 +128,36 @@ refreshColorSwatches();
 // Create and subscribe to Observables for range input control events
 //
 createRangeObservable(redOneRangeControl).subscribe(event => {
-  first.red = parseFloat((event.target as HTMLInputElement).value);
+  const newValue = (event.target as HTMLInputElement).value;
+  redOneNumberControl.value = newValue;
+  first.red = parseFloat(newValue);
   refreshColorSwatches();
 });
 
 createRangeObservable(greenOneRangeControl).subscribe(event => {
-  first.green = parseFloat((event.target as HTMLInputElement).value);
+  const newValue = (event.target as HTMLInputElement).value;
+  greenOneNumberControl.value = newValue;
+  first.green = parseFloat(newValue);
   refreshColorSwatches();
 });
 
 createRangeObservable(redTwoRangeControl).subscribe(event => {
-  second.red = parseFloat((event.target as HTMLInputElement).value);
+  const newValue = (event.target as HTMLInputElement).value;
+  redTwoNumberControl.value = newValue;
+  second.red = parseFloat(newValue);
   refreshColorSwatches();
 });
 
 createRangeObservable(greenTwoRangeControl).subscribe(event => {
-  second.green = parseFloat((event.target as HTMLInputElement).value);
+  const newValue = (event.target as HTMLInputElement).value;
+  greenTwoNumberControl.value = newValue;
+  second.green = parseFloat(newValue);
   refreshColorSwatches();
 });
 
 createRangeObservable(intensityRangeControl).subscribe(event => {
+  const newValue = (event.target as HTMLInputElement).value;
+  intensityNumberControl.value = newValue;
   refreshColorSwatches();
 });
 
@@ -166,6 +176,7 @@ balanceRangeLabel.addEventListener('click', () => {
 
 intensityRangeLabel.addEventListener('click', () => {
   intensityRangeControl.value = '50';
+  intensityNumberControl.value = '50';
   refreshColorSwatches();
 });
 

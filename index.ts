@@ -40,13 +40,13 @@ import { addRGBColors, addFractionalRGBColors } from './colorFunctions';
 //
 // Get color swatch DOM elements
 //
-const redSwatch = document.getElementById('rgb_red') as HTMLElement;
-const greenSwatch = document.getElementById('rgb_green') as HTMLElement;
-const blueSwatch = document.getElementById('rgb_blue') as HTMLElement;
-const greenPlusRedSwatch = document.getElementById('rgb_green+red') as HTMLElement;
-const redPlusBlueSwatch = document.getElementById('rgb_red+blue') as HTMLElement;
-const bluePlusGreenSwatch = document.getElementById('rgb_blue+green') as HTMLElement;
-const redPlusGreenPlusBlueSwatch = document.getElementById('rgb_red+green+blue') as HTMLElement;
+const redSwatch = document.getElementById('red') as HTMLElement;
+const greenSwatch = document.getElementById('green') as HTMLElement;
+const blueSwatch = document.getElementById('blue') as HTMLElement;
+const greenPlusRedSwatch = document.getElementById('green_red') as HTMLElement;
+const redPlusBlueSwatch = document.getElementById('red+blue') as HTMLElement;
+const bluePlusGreenSwatch = document.getElementById('blue+green') as HTMLElement;
+const redPlusGreenPlusBlueSwatch = document.getElementById('red+green+blue') as HTMLElement;
 const firstSwatch = document.getElementById('first') as HTMLElement;
 const secondSwatch = document.getElementById('second') as HTMLElement;
 const compositeSwatch = document.getElementById('composite') as HTMLElement;
@@ -127,24 +127,23 @@ createRangeObservable(greenOneRangeControl).subscribe((event: Event) => {
   refreshColorSwatches();
 });
 
-createRangeObservable(redTwoRangeControl).subscribe((event: Event)  => {
+createRangeObservable(redTwoRangeControl).subscribe((event: Event) => {
   second.red = parseFloat((event.target as HTMLInputElement).value);
   refreshColorSwatches();
 });
 
-createRangeObservable(greenTwoRangeControl).subscribe((event: Event)  => {
+createRangeObservable(greenTwoRangeControl).subscribe((event: Event) => {
   second.green = parseFloat((event.target as HTMLInputElement).value);
   refreshColorSwatches();
 });
 
-createRangeObservable(intensityRangeControl).subscribe((event: Event)  => {
-  refreshColorSwatches()
-});
-
-createRangeObservable(balanceRangeControl).subscribe((event: Event)  => {
+createRangeObservable(intensityRangeControl).subscribe((event: Event) => {
   refreshColorSwatches();
 });
 
+createRangeObservable(balanceRangeControl).subscribe((event: Event) => {
+  refreshColorSwatches();
+});
 
 //
 // Reset balance and intensity range input controls
@@ -213,7 +212,11 @@ function refreshColorSwatches() {
   const fraction = parseFloat(balanceRangeControl.value);
   updateElementBackground(firstSwatch, first, intensityRangeControl.value);
   updateElementBackground(secondSwatch, second, intensityRangeControl.value);
-  updateElementBackground(compositeSwatch, addFractionalRGBColors(first, second, fraction), intensityRangeControl.value);
+  updateElementBackground(
+    compositeSwatch,
+    addFractionalRGBColors(first, second, fraction),
+    intensityRangeControl.value
+  );
 }
 
 //

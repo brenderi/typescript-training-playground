@@ -76,6 +76,10 @@ The fraction of red is on the horizontal axis and the fraction of green is on th
 
 When adding two colors together, the resulting color is found by drawing a line between the two points representing those colors. To find the sum, select any point along that line. If the two colors are combined equally, then the resulting color is at the midpoint of that line. More of one color means the result is closer to that color than the other.
 
+The center of the triangle is located at (1/3, 1/3) where each color has an equal value.
+
+Any given point on the color triangle describes more than one color. The intensity can vary between 0 and 100% for each color point.
+
 8. Create a fractional RGB class:
    - [ ] Contains the fractional red, green, and blue values (between 0 and 1)
    - [ ] Has a function to determine if the color is valid

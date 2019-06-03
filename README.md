@@ -87,7 +87,7 @@ The center of the triangle is located at (1/3, 1/3) where each color has an equa
 
 Any given point on the color triangle describes more than one color. The intensity can vary between 0 and 100% for each color point.
 
-8. Create a fractional RGB class (implements the `IColor` interface described in (5):
+8. Create a fractional RGB class (implements the `IColor` interface described in (2):
    - [ ] Contains the fractional red, green, and blue values (between 0 and 1)
    - [ ] Has a function to determine if the color is valid
    - [ ] Has a function that takes in the intensity and return a valid CSS RGB color

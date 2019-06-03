@@ -23,9 +23,15 @@ There are multiple ways to specify a color in CSS:
 3. Add a method to each class that validates whether the color is valid.
 
 The hex and rgb formats are explicit about the common components of CSS colors and visible light: red, green, and blue.
-A color can be represented as a combination: `C = rR + gG + bB` where r, g, and b are the intensities of red, green, and blue.
-The total intensity of the color is then `I = r + g + b`.
-If we normalize the intensity (i.e. make it equal to 1), then r, g, and b are the fractions of red, green, and blue in the color.
+A color can be represented as a combination: 
+
+`C = rR + gG + bB` 
+
+where `r`, `g`, and `b` are the intensities of red, green, and blue. The total intensity of the color is then 
+
+`I = r + g + b`.
+
+If we normalize the intensity (i.e. make it equal to 1), then `r`, `g`, and `b` are the fractions of red, green, and blue in the color.
 For example, the named CSS color "salmon" is `rgb(250, 128, 114)`. The total intensity of this color is `250 + 128 + 114 = 492`. The color fractions are:
 
 ```math

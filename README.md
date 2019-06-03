@@ -28,7 +28,7 @@ The goal of this activity is to use classes, interfaces, and functions to create
 
 Now that we can represent colors in different ways, what does the algorithm look like to add two colors together? Let's start with the three colors that make up all of the Daktronics full-color displays: red, green, and blue.
 
-5. Using the class created as part of step (2), create RGB representations of these colors:
+5. Using the class created as part of step (2), create full intensity RGB representations of these colors:
    
    - [ ] red
    - [ ] green
@@ -36,14 +36,15 @@ Now that we can represent colors in different ways, what does the algorithm look
 
 6. Set the corresponding color swatches in the HTML view to the string produced by the function written in step (4).
 
-7. Write a function that computes the various combinations of those colors:
-
+Looking at the RGB representations of red, green, and blue, what would you expect the combinations of those full intensity colors to be?
    - [ ] red and green
    - [ ] green and blue
    - [ ] blue and red
    - [ ] red and green and blue
+   
+7. Write a function that produces the expected results.
 
-The hex and rgb formats are explicit about the common components of CSS colors and visible light: red, green, and blue.
+The HEX and RGB formats are explicit about the primary components of CSS colors and visible light: red, green, and blue.
 A color can be represented as a combination: 
 
 `C = rR + gG + bB` where `r`, `g`, and `b` are the intensities of red, green, and blue.

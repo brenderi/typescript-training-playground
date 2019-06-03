@@ -84,3 +84,5 @@ Any given point on the color triangle describes more than one color. The intensi
    - [ ] Contains the fractional red, green, and blue values (between 0 and 1)
    - [ ] Has a function to determine if the color is valid
    - [ ] Has a function that takes in the intensity and return a valid CSS RGB color
+
+9. Connect up the part of the view that allows a user to set values for red and green, the balance between the first and second colors, and the overall intensity of the colors.

@@ -12,6 +12,16 @@ There are multiple ways to specify a color in CSS:
 
 (There is also alpha channel, but that will be ignored for this activity.)
 
+1. Add a class to the color-models folder in separate TS files for each of the ways to represent a color:
+
+   - HEX
+   - RGB
+   - HSL
+
+2. Add a method to each class that will output a CSS color. Consider using a string template.
+
+3. Add a method to each class that validates whether the color is valid.
+
 The hex and rgb formats are explicit about the common components of CSS colors and visible light: red, green, and blue.
 A color can be represented as a combination: `C = rR + gG + bB` where r, g, and b are the intensities of red, green, and blue.
 The total intensity of the color is then `I = r + g + b`.
@@ -25,3 +35,5 @@ b = 114/492 ≈ 0.2317
 ```
 
 So about 51% red, 26% green, and 23% blue at an intensity of 64% (`492/765 * 100`) will produce the salmon color.
+
+(<https://raw.githubusercontent.com/brenderi/typescript-training-playground/master/color-triangle.png> "Color Triangle")

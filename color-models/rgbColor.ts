@@ -28,8 +28,11 @@ export class FractionalRGBColor {
   }
 
   public set red(value: number) {
-      this._red = value;
+      this._red = parseFloat(value.toFixed(4));
       this.blue = parseFloat((1 - this._red - this._green).toFixed(4));
+      if (this.blue < 0) {
+        this.blue = 0;
+      }
   }
 
   public get green() {
@@ -37,8 +40,11 @@ export class FractionalRGBColor {
   }
 
   public set green(value: number) {
-      this._green = value;
+      this._green = parseFloat(value.toFixed(4));
       this.blue = parseFloat((1 - this._red - this._green).toFixed(4));
+      if (this.blue < 0) {
+        this.blue = 0;
+      }
   }
 
   blue: number;

@@ -131,6 +131,12 @@ createRangeObservable(redOneRangeControl).subscribe(event => {
   const newValue = (event.target as HTMLInputElement).value;
   redOneNumberControl.value = newValue;
   first.red = parseFloat(newValue);
+  if (!first.isValidColor()) {
+    first.green = 1 - first.red;
+    greenOneRangeControl.value = first.green.toString();
+    greenOneNumberControl.value = first.green.toString();
+  }
+
   refreshColorSwatches();
 });
 
@@ -138,6 +144,12 @@ createRangeObservable(greenOneRangeControl).subscribe(event => {
   const newValue = (event.target as HTMLInputElement).value;
   greenOneNumberControl.value = newValue;
   first.green = parseFloat(newValue);
+  if (!first.isValidColor()) {
+    first.red = 1 - first.green;
+    redOneRangeControl.value = first.red.toString();
+    redOneNumberControl.value = first.red.toString();
+  }
+
   refreshColorSwatches();
 });
 
@@ -145,6 +157,12 @@ createRangeObservable(redTwoRangeControl).subscribe(event => {
   const newValue = (event.target as HTMLInputElement).value;
   redTwoNumberControl.value = newValue;
   second.red = parseFloat(newValue);
+  if (!second.isValidColor()) {
+    second.green = 1 - second.red;
+    greenTwoRangeControl.value = second.green.toString();
+    greenTwoNumberControl.value = second.green.toString();
+  }
+
   refreshColorSwatches();
 });
 
@@ -152,6 +170,12 @@ createRangeObservable(greenTwoRangeControl).subscribe(event => {
   const newValue = (event.target as HTMLInputElement).value;
   greenTwoNumberControl.value = newValue;
   second.green = parseFloat(newValue);
+  if (!second.isValidColor()) {
+    second.red = 1 - second.green;
+    redTwoRangeControl.value = second.red.toString();
+    redTwoNumberControl.value = second.red.toString();
+  }
+
   refreshColorSwatches();
 });
 
@@ -185,30 +209,82 @@ intensityRangeLabel.addEventListener('click', () => {
 // Listen for changes to the number input controls
 //
 redOneNumberControl.addEventListener('blur', event => {
-  const newValue = (event.target as HTMLInputElement).value;
-  first.red = parseFloat(newValue);
-  redOneRangeControl.value = newValue;
+  const newValue = Number((event.target as HTMLInputElement).value);
+  if (isNaN(newValue) || newValue < 0 || newValue > 1) {
+    first.red = 0;
+    redOneNumberControl.value = '0';
+    redOneRangeControl.value = '0';
+  } else {
+    first.red = newValue;
+    redOneRangeControl.value = first.red.toString();
+  }
+
+  if (!first.isValidColor()) {
+    first.green = 1 - first.red;
+    greenOneRangeControl.value = first.green.toString();
+    greenOneNumberControl.value = first.green.toString();
+  }
+
   refreshColorSwatches();
 });
 
 greenOneNumberControl.addEventListener('blur', event => {
-  const newValue = (event.target as HTMLInputElement).value;
-  first.green = parseFloat(newValue);
-  greenOneRangeControl.value = newValue;
+  const newValue = Number((event.target as HTMLInputElement).value);
+  if (isNaN(newValue) || newValue < 0 || newValue > 1) {
+    first.green = 0;
+    greenOneNumberControl.value = '0';
+    greenOneRangeControl.value = '0';
+  } else {
+    first.green = newValue;
+    greenOneRangeControl.value = first.green.toString();
+  }
+
+  if (!first.isValidColor()) {
+    first.red = 1 - first.green;
+    redOneRangeControl.value = first.red.toString();
+    redOneNumberControl.value = first.red.toString();
+  }
+
   refreshColorSwatches();
 });
 
 redTwoNumberControl.addEventListener('blur', event => {
-  const newValue = (event.target as HTMLInputElement).value;
-  second.red = parseFloat(newValue);
-  redTwoRangeControl.value = newValue;
+  const newValue = Number((event.target as HTMLInputElement).value);
+  if (isNaN(newValue) || newValue < 0 || newValue > 1) {
+    second.red = 0;
+    redTwoNumberControl.value = '0';
+    redTwoRangeControl.value = '0';
+  } else {
+    second.red = newValue;
+    redTwoRangeControl.value = second.red.toString();
+  }
+
+  if (!second.isValidColor()) {
+    second.green = 1 - second.red;
+    greenTwoRangeControl.value = second.green.toString();
+    greenTwoNumberControl.value = second.green.toString();
+  }
+
   refreshColorSwatches();
 });
 
 greenTwoNumberControl.addEventListener('blur', event => {
-  const newValue = (event.target as HTMLInputElement).value;
-  second.green = parseFloat(newValue);
-  greenTwoRangeControl.value = newValue;
+  const newValue = Number((event.target as HTMLInputElement).value);
+  if (isNaN(newValue) || newValue < 0 || newValue > 1) {
+    second.green = 0;
+    greenTwoNumberControl.value = '0';
+    greenTwoRangeControl.value = '0';
+  } else {
+    second.green = newValue;
+    greenTwoRangeControl.value = second.green.toString();
+  }
+
+  if (!second.isValidColor()) {
+    second.red = 1 - second.green;
+    redTwoRangeControl.value = second.red.toString();
+    redTwoNumberControl.value = second.red.toString();
+  }
+
   refreshColorSwatches();
 });
 

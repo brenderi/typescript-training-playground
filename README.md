@@ -2,7 +2,7 @@
 
 [Edit on StackBlitz ⚡️](https://stackblitz.com/edit/typescript-training-playground)
 
-## Introduction
+## Adding Colors
 
 There are multiple ways to specify a color in CSS:
 

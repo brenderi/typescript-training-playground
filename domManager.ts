@@ -208,17 +208,20 @@ export function handleEvents(first: FractionalRGBColor, second: FractionalRGBCol
 }
 
 export function initializeControls(first: FractionalRGBColor, second: FractionalRGBColor) {
-  redOneRangeControl.value = first.red.toString();
-  redOneNumberControl.value = first.red.toString();
-  redTwoRangeControl.value = second.red.toString();
-  redTwoNumberControl.value = second.red.toString();
+  redOneRangeControl.value = first ? first.red.toString() : '';
+  redOneNumberControl.value = first ? first.red.toString() : '';
+  redTwoRangeControl.value = second ? second.red.toString() : '';
+  redTwoNumberControl.value = second ? second.red.toString() : '';
 
-  greenOneRangeControl.value = first.green.toString();
-  greenOneNumberControl.value = first.green.toString();
-  greenTwoRangeControl.value = second.green.toString();
-  greenTwoNumberControl.value = second.green.toString();
+  greenOneRangeControl.value = first ? first.green.toString() : '';
+  greenOneNumberControl.value = first ? first.green.toString() : '';
+  greenTwoRangeControl.value = second ? second.green.toString() : '';
+  greenTwoNumberControl.value = second ? second.green.toString() : '';
 
-  refreshColorSwatches(first, second);
+
+  if (first && second) {
+    refreshColorSwatches(first, second);
+  }
 }
 
 //
@@ -239,7 +242,7 @@ export function refreshColorSwatches(first, second) {
 // Sets the background color of the element passed in and sets the description of that element to the value of the background-color style
 //
 export function updateElementBackground(el: HTMLElement, color: RGBColor | FractionalRGBColor, intensity?: number | string) {
-  el.style.backgroundColor = color.buildCSSColor(intensity);
+  el.style.backgroundColor = color ? color.buildCSSColor(intensity) : 'transparent';
   document.getElementById(`${el.id}-csscolor`).textContent = el.style.backgroundColor;
 }
 

@@ -75,3 +75,8 @@ This way of describing colors produces the color triangle:
 The fraction of red is on the horizontal axis and the fraction of green is on the vertical axis. The blue component of a color is calculated from the rule that all three fractions add up to 1. This means that any color falls within the triangle bounded by the x-axis, y-axis, and the line `1 - x`.
 
 When adding two colors together, the resulting color is found by drawing a line between the two points representing those colors. To find the sum, select any point along that line. If the two colors are combined equally, then the resulting color is at the midpoint of that line. More of one color means the result is closer to that color than the other.
+
+8. Create a fractional RGB class:
+   - [ ] Contains the fractional red, green, and blue values (between 0 and 1)
+   - [ ] Has a function to determine if the color is valid
+   - [ ] Has a function that takes in the intensity and return a valid CSS RGB color

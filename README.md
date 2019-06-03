@@ -36,4 +36,4 @@ b = 114/492 ≈ 0.2317
 
 So about 51% red, 26% green, and 23% blue at an intensity of 64% (`492/765 * 100`) will produce the salmon color.
 
-(<https://raw.githubusercontent.com/brenderi/typescript-training-playground/master/color-triangle.png> "Color Triangle")
+![Color Triangle](color-triangle.png)

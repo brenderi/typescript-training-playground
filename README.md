@@ -57,7 +57,7 @@ So about 51% red, 26% green, and 23% blue at an intensity of 64% (`492/765 * 100
 
 This way of looking at colors produces the color triangle:
 
-![Color Triangle](color-triangle.png)
+![Color Triangle](color-triangle.jpg)
 
 The fraction of red is on the horizontal axis and the fraction of green is on the vertical axis. The blue component of a color is calculated from the rule that all three fractions add up to 1. This means that any color falls within the triangle bounded by the x-axis, y-axis, and the line `1 - x`.
 

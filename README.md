@@ -22,6 +22,21 @@ There are multiple ways to specify a color in CSS:
 
 3. Add a method to each class that validates whether the color is valid.
 
+Now that we can represent colors in different ways, what does the algorithm look like to add two colors together? Let's start with the three colors that make up all of the Daktronics full-color displays: red, green, and blue.
+
+4. Create RGB representations of these color:
+   
+   - red
+   - green
+   - blue
+
+5. Write a function that computes the sum of those colors:
+
+   - red and green
+   - green and blue
+   - blue and red
+   - red and green and blue
+
 The hex and rgb formats are explicit about the common components of CSS colors and visible light: red, green, and blue.
 A color can be represented as a combination: 
 
@@ -40,4 +55,10 @@ b = 114/492 ≈ 0.2317
 
 So about 51% red, 26% green, and 23% blue at an intensity of 64% (`492/765 * 100`) will produce the salmon color.
 
+This way of looking at colors produces the color triangle:
+
 ![Color Triangle](color-triangle.png)
+
+The fraction of red is on the horizontal axis and the fraction of green is on the vertical axis. The blue component of a color is calculated from the rule that all three fractions add up to 1. This means that any color falls within the triangle bounded by the x-axis, y-axis, and the line `1 - x`.
+
+When adding two colors together, the resulting color is found by drawing a line between the two points for those colors. Where along the line to find the sum depends on the ratio of the original colors - more of one color means the sum is closer to that color than the other.

@@ -18,18 +18,12 @@ The goal of this activity is to use classes, interfaces, and functions to create
 
 1. A starter template for this activity is available on StackBlitz at <https://stackblitz.com/edit/typescript-training-playground-starter>. Fork this project using the button in the toolbar. This project contains all of the HTML and CSS required for the view and the code that wires up the range and number `<input>` controls.
 
-2. Add a class to the color-models folder in separate TS files for each of the ways to represent a color:
+2. Add a class to the color-models folder in separate TS files for each of the following ways to represent a color:
 
    - [ ] HEX
    - [ ] RGB
-
-3. Add a function to each class that validates whether the color is valid.
-
-4. Add a function to each class that will output a CSS color. Consider using a template string.
-
-Now that we can represent colors in different ways, what does the algorithm look like to add two colors together? Let's start with the three colors that make up all of the Daktronics full-color displays: red, green, and blue.
-
-5. Using the class created as part of step (2), create full intensity RGB representations of each primary color. The classes should implement this interface:
+   
+    The classes should implement this interface:
 
 ```ts
 interface IColor {
@@ -40,6 +34,14 @@ interface IColor {
   buildCSSColor(i?: string | number): string;
 }
 ```
+
+3. Add a function to each class that validates whether the color is valid.
+
+4. Add a function to each class that will output a CSS color. Consider using a template string.
+
+Now that we can represent colors in different ways, what does the algorithm look like to add two colors together? Let's start with the three colors that make up all of the Daktronics full-color displays: red, green, and blue.
+
+5. Using the class created as part of step (2), create full intensity RGB representations of each primary color.
 
 6. Set the corresponding color swatches in the HTML view to the string produced by the function written in step (4).
 

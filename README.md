@@ -16,14 +16,14 @@ There are multiple ways to specify a color in CSS:
 
 The goal of this activity is to use classes, interfaces, and functions to create objects that represent colors and describe how they combine.
 
-1. A starter template for this activity is available on StackBlitz at <https://stackblitz.com/edit/typescript-training-playground-starter>. Fork this project using the button in the toolbar. This project contains all of the HTML and CSS required for the view and the code that wires up the range and number `<input>` controls.
+1. A starter template for this activity is available on StackBlitz at <https://stackblitz.com/edit/typescript-training-color-activity>. Fork this project using the button in the toolbar. This project contains all of the HTML and CSS required for the view and the code that wires up the range and number `<input>` controls.
 
 2. Add a class to the color-models folder in separate TS files for each of the following ways to represent a color:
 
-   - [ ] HEX
-   - [ ] RGB
-   
-    The classes should implement this interface:
+   - [ ] HEX - `HexColor`
+   - [ ] RGB - `RGBColor`
+
+   The classes should implement this interface:
 
 ```ts
 interface IColor {
@@ -31,7 +31,7 @@ interface IColor {
   green: number;
   blue: number;
   isValidColor(): boolean;
-  buildCSSColor(i?: string | number): string;
+  buildCSSColor(): string;
 }
 ```
 
@@ -48,17 +48,18 @@ Now that we can represent colors in different ways, what does the algorithm look
 ### Combining CSS Colors
 
 Looking at the RGB representations of red, green, and blue, what would you expect the combinations of those full intensity colors to be?
-   - [ ] red and green
-   - [ ] green and blue
-   - [ ] blue and red
-   - [ ] red and green and blue
-   
+
+- [ ] red and green
+- [ ] green and blue
+- [ ] blue and red
+- [ ] red and green and blue
+
 7. Write a function that takes in two colors and returns the value you are expecting. What are some potential limitations of that function?
 
 ### A Little Bit of Math
 
 The HEX and RGB formats are explicit about the primary components of CSS colors and visible light: red, green, and blue.
-A color can be represented as a combination: 
+A color can be represented as a combination:
 
 `C = rR + gG + bB` where `r`, `g`, and `b` are the intensities of red, green, and blue.
 
@@ -83,13 +84,15 @@ The fraction of red is on the horizontal axis and the fraction of green is on th
 
 When adding two colors together, the resulting color is found by drawing a line between the two points representing those colors. To find the sum, select any point along that line. If the two colors are combined equally, then the resulting color is at the midpoint of that line. More of one color means the result is closer to that color than the other.
 
-The center of the triangle is located at (1/3, 1/3) where each color has an equal value.
-
 Any given point on the color triangle describes more than one color. The intensity can vary between 0 and 100% for each color point.
 
-8. Create a fractional RGB class (implements the `IColor` interface described in (2):
-   - [ ] Contains the fractional red, green, and blue values (between 0 and 1)
-   - [ ] Has a function to determine if the color is valid
-   - [ ] Has a function that takes in the intensity and return a valid CSS RGB color
+8. Add a fractional RGB class `FractionalRGBColor` to the `rgbColor.ts` file:
 
-9. Connect up the part of the view that allows a user to set values for red and green, the balance between the first and second colors, and the overall intensity of the colors.
+- [ ] Contains the fractional red, green, and blue values (between 0 and 1)
+- [ ] The constructor takes in the red and green values
+- [ ] Uses `get` and `set` for the red and green properties
+- [ ] Calculates the value of blue when the values of red or green change
+- [ ] Has a function to determine if the color is valid - `isValidColor(): boolean;`
+- [ ] Has a function that takes in the intensity and return a valid CSS RGB color - `buildCSSColor(i?: string | number): string;`
+
+9. Create a `first` instance and a `second` instance of the `FractionalRGBColor` class to connect up the view. This allows a user to set values for red and green, the balance between the first and second colors, and the overall intensity of the colors.
